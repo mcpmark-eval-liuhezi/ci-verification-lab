@@ -1,0 +1,17 @@
+name: Verify Pipeline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Report run details
+        run: |
+          echo "Verify Pipeline executed on demand."
+          echo "Repository: ${GITHUB_REPOSITORY}"
+          echo "Run ID: ${GITHUB_RUN_ID}"
+          echo "SHA: ${GITHUB_SHA}"
